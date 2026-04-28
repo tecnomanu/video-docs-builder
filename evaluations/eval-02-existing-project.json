@@ -1,0 +1,16 @@
+{
+  "skill": "video-docs-builder",
+  "description": "Add a new video to an existing project that already has config and flows",
+  "query": "Document the dashboard section of my app. The project is at /home/user/projects/demo-app and already has .video-docs configured.",
+  "files": ["/home/user/projects/demo-app/.video-docs/config.json", "/home/user/projects/demo-app/.video-docs/flows/01-login.json"],
+  "expected_behavior": [
+    "Reads /home/user/projects/demo-app/.video-docs/config.json without asking for credentials again",
+    "Runs: npx tsx scripts/analyze-app.ts /home/user/projects/demo-app/.video-docs (or reads existing analysis if available)",
+    "Identifies the dashboard section and checks if a flow already exists",
+    "If no flow exists: reads screenshots from /home/user/projects/demo-app/.video-docs/analysis/screenshots/ before writing the flow JSON",
+    "Sets use_setup_login: true since this is not the login flow",
+    "Includes a navigate step with wait_for pointing to a CSS selector that confirms the dashboard has rendered",
+    "Runs: bash scripts/run-all.sh /home/user/projects/demo-app/.video-docs/flows/02-dashboard.json",
+    "Offers to regenerate the docs site to include the new video"
+  ]
+}

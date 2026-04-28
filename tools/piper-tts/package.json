@@ -1,0 +1,16 @@
+{
+  "name": "piper-tts",
+  "version": "1.0.0",
+  "description": "Local TTS with Piper + Daniela voice (es_AR)",
+  "type": "module",
+  "scripts": {
+    "setup": "bash setup.sh",
+    "generate": "npx tsx src/generate.ts",
+    "test": "echo 'Hola, esta es una prueba de la voz Daniela.' | npx tsx src/generate.ts /tmp/test-piper.mp3 && ffplay -nodisp -autoexit /tmp/test-piper.mp3 2>/dev/null || open /tmp/test-piper.mp3 2>/dev/null",
+    "server": "python3 server/server.py --voices-dir voices"
+  },
+  "devDependencies": {
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,12 @@
+node_modules/
+output/
+*.enriched.json
+.env
+dist/
+# Local: flow JSON, config (credentials), generated media
+projects/
+# Piper voice models are large (~100MB each) — run tools/piper-tts/setup.sh to download
+tools/piper-tts/voices/*.onnx
+.DS_Store
+.claude/
+.video-docs/

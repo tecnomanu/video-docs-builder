@@ -1,0 +1,7 @@
+piper-tts>=1.4.0
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+python-multipart>=0.0.9
+# Uncomment ONE of these for GPU acceleration:
+# onnxruntime-rocm        # AMD Radeon (requires ROCm 6.x on Linux)
+# onnxruntime-gpu         # NVIDIA CUDA

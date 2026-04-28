@@ -1,0 +1,5 @@
+node_modules/
+voices/*.onnx
+bin/piper_macos.tar.gz
+bin/piper/
+.env

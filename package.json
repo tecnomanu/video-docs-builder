@@ -1,0 +1,33 @@
+{
+  "name": "video-docs-builder",
+  "version": "1.0.0",
+  "description": "Automated tutorial video generator: Playwright browser recording + TTS narration (Piper/ElevenLabs/OpenAI) + FFmpeg assembly",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tecnomanu/video-docs-builder.git"
+  },
+  "author": "video-docs-builder contributors",
+  "license": "MIT",
+  "scripts": {
+    "generate-audio": "tsx scripts/generate-audio.ts",
+    "generate-video": "tsx scripts/generate-video.ts",
+    "assemble": "tsx scripts/assemble.ts",
+    "run-all": "bash scripts/run-all.sh",
+    "analyze-app": "tsx scripts/analyze-app.ts",
+    "generate-docs": "tsx scripts/generate-docs-site.ts",
+    "init-project": "tsx scripts/init-project.ts",
+    "rehearse": "tsx scripts/rehearse.ts"
+  },
+  "dependencies": {
+    "@elevenlabs/elevenlabs-js": "^2.41.1",
+    "dotenv": "^16.4.7",
+    "openai": "^6.33.0",
+    "playwright": "^1.50.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}

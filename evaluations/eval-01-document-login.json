@@ -1,0 +1,16 @@
+{
+  "skill": "video-docs-builder",
+  "description": "Document a login flow for a new project",
+  "query": "I want to document the login flow of my app. It's running at http://localhost:3000. The project is at /home/user/projects/myapp. Email: admin@myapp.com, password: admin123",
+  "expected_behavior": [
+    "Asks for or recognizes the app URL, absolute project path, and credentials",
+    "Runs: npm run init-project /home/user/projects/myapp",
+    "Edits /home/user/projects/myapp/.video-docs/config.json with the correct credentials",
+    "Runs: npx tsx scripts/analyze-app.ts /home/user/projects/myapp/.video-docs",
+    "Shows discovered sections as a lettered list and asks which to document",
+    "Creates a flow JSON at /home/user/projects/myapp/.video-docs/flows/01-login.json",
+    "Applies timing golden rule: uses a 'wait' step with narration BEFORE the click_submit step, not narration on click with large action_ms",
+    "Runs: bash scripts/run-all.sh /home/user/projects/myapp/.video-docs/flows/01-login.json",
+    "Asks if the user wants a React docs site generated"
+  ]
+}
